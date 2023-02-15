@@ -2,13 +2,6 @@
 #include <fstream>
 
 using namespace std;
-
-auto replacementRuleBee(){
-
-    ifstream replacedRulesBee("bee_replacement.txt");
-    return 0;
-}
-
 int main() {
     ifstream inputFile("bee.txt");
 
@@ -18,7 +11,15 @@ int main() {
     if (choice == "bee") {
         inputFile.open("bee.txt");
         if (inputFile.is_open()) {
-            replacementRuleBee();
+            string line;
+            getline(inputFile, line);
+            cout << line << endl;
+//            auto replacementRules{ifstream("bee_replacement.txt")};
+//            while (!replacementRules.eof()) {
+//                string line;
+//                getline(replacementRules, line);
+//                cout << line << endl;
+
             cout << "File is open" << endl;
 
 
