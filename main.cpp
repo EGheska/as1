@@ -17,7 +17,7 @@ int main(){
             std::cout << buffer << "\n";
         }
     } else {
-        std::cerr << "Invalid input";
+        std::cerr << "Invalid input. Cannot find a file named " << choice;
     }
     return 0;
 }
