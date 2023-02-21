@@ -1,9 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-auto findIndex() {
-    std::string toReplace;
-    std::string replaced;
+auto findIndex(std::string toReplace, std::string replaced) {
     std::ifstream replaceFile("bee_replacement.txt");
     std::string buffer;
     while (std::getline(replaceFile, buffer)) {
@@ -16,15 +14,21 @@ auto findIndex() {
 int main(){
     std::ifstream beeFile("bee.txt");
     std::ifstream smellyFile("smelly.txt");
+    std::ofstream beeOut("bee.replaced");
     std::string buffer;
     std::string choice, choiceReplace;
     std::cin >> choice >> choiceReplace;
+    std::string toReplace, replaced;
     if (choice == "bee") {
-        findIndex();
+        findIndex(toReplace, replaced);
         while(std::getline(beeFile,buffer)) {
-
-            //std::cout << buffer << "\n";
+        if (buffer.find(toReplace) != std::string::npos) {
+                buffer.replace(buffer.find(toReplace), toReplace.length(), replaced);
         }
+            beeOut << buffer << "\n";
+            std::cout << buffer << "\n";
+        }
+
     } else if (choice == "smelly") {
         while(std::getline(smellyFile, buffer)){
             std::cout << buffer << "\n";
