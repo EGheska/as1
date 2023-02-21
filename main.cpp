@@ -40,11 +40,11 @@ int main1() {
             std::string line;
             std::getline(std::cin, line);
             std::cout << line << std::endl;
-//            auto replacementRules{ifstream("bee_replacement.txt")};
-//            while (!replacementRules.eof()) {
-//                string line;
-//                getline(replacementRules, line);
-//                cout << line << endl;
+            auto replacementRules{ifstream("bee_replacement.txt")};
+            while (!replacementRules.eof()) {
+                string line;
+                getline(replacementRules, line);
+                cout << line << endl;
 
             std::cout << "File is open\n";
         } else {
