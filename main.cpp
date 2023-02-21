@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+auto BeeRules(std::string replace){
+    return replace;
+}
 int main(){
     std::ifstream beeFile("bee.txt");
     std::ifstream smellyFile("smelly.txt");
@@ -10,6 +12,7 @@ int main(){
     std::cin >> choice >> choiceReplace;
     if (choice == "bee") {
         while(std::getline(beeFile,buffer)) {
+            BeeRules(buffer);
             std::cout << buffer << "\n";
         }
     } else if (choice == "smelly") {
