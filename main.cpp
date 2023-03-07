@@ -38,14 +38,14 @@ int main(){
             }
             std::cout << "Replaced text: " << "\n";
             std::cout << buffer;
-        }else {
+        } else {
             std::cerr << "Invalid name of the replaced file. Cannot find a file named " << choiceReplace;
         }
     } else if (choice == "smelly") {
         while(std::getline(smellyFile, line)){
             buffer += line + "\n";
         }
-        if (choiceReplace == "smelly_replaced"){
+        if (choiceReplace == "smelly_replacement"){
             std::cout << "Original text: " << "\n";
             std::cout << buffer << "\n";
             while(std::getline(replacedSmelly, replacementBuffer)){
